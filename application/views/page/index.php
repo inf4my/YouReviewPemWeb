@@ -15,39 +15,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
-<!-- header -->
+<!-- header-->
 <div class="top-banner">
-	 <div class="header">
-		 <div class="container">
-			 <div class="headr-left">
-				 <div class="social">							
-						<a href="#"><i class="facebook"></i></a>
-						<a href="#"><i class="twitter"></i></a>
-						<a href="#"><i class="gplus"></i></a>	
-						<a href="#"><i class="pin"></i></a>	
-						<a href="#"><i class="youtube"></i></a>	
-				 </div>
-				 <div class="search">
-					 <form>
-						 <input type="submit" value="">
-						 <input type="text" value="" placeholder="Search...">					 
-					 </form>
-				 </div>
-				 <div class="clearfix"></div>
-			 </div>
-			 <div class="headr-right">
-				 <div class="details">
-					 <ul>
-						 <li><a href="mailto@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info(at)example.com</a></li>
-						 <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>(+1)000 123 456789</li>
-					 </ul>
-				 </div>
-			 </div>
-			 <div class="clearfix"></div>
-		 </div>
-	 </div>
+	<?php echo $header;?>
+	 <?php echo $banner;?>
 </div>
-<!-- banner -->
 	 <!-- Slider-starts-Here -->
 	 <div class="slider">
 		  <div class="callbacks_container">

@@ -22,55 +22,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <!-- header -->
-<div class="header">
-	 <div class="container">
-		 <div class="headr-left">
-			 <div class="social">							
-					<a href="#"><i class="facebook"></i></a>
-					<a href="#"><i class="twitter"></i></a>
-					<a href="#"><i class="gplus"></i></a>	
-					<a href="#"><i class="pin"></i></a>	
-					<a href="#"><i class="youtube"></i></a>	
-			 </div>
-			 <div class="search">
-				 <form>
-					 <input type="submit" value="">
-					 <input type="text" value="" placeholder="Search...">					 
-				 </form>
-			 </div>
-			 <div class="clearfix"></div>
-		 </div>
-		 <div class="headr-right">
-			 <div class="details">
-				 <ul>
-					 <li><a href="mailto@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info(at)example.com</a></li>
-					 <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>(+1)000 123 456789</li>
-				 </ul>
-			 </div>
-		 </div>
-		 <div class="clearfix"></div>
-	 </div>
-</div>
+<?php echo $header; ?>
 <!--banner-info-->	
-<div class="banner-info">
-	  <div class="container">
-		  <div class="logo">
-				 <h1><a href="index.html">GAME BOX</a></h1>
-		  </div>
-		 <div class="top-menu">
-		     <span class="menu"></span>
-				<ul class="nav1">
-					 <li><a href="index.html">Home</a></li>
-					 <li class="active"><a href="about.html">About</a></li>
-					 <li><a href="reviews.html">Reviews</a></li>
-					 <li><a href="typo.html">News</a></li>
-					 <li><a href="gallery.html">Gallery</a></li>
-					 <li><a href="contact.html">Mail</a></li>
-			  </ul>
-		 </div>		 
-		 <div class="clearfix"></div>
-	 </div>
-</div>
+<?php echo $banner; ?>
 <!-- banner -->
 <div class="banner">		  			
 		<div class="bnr2">						  
@@ -82,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <h2>About</h2>
 		 <div class="about-info-grids">
 			 <div class="col-md-5 abt-pic">
-				 <img src="images/abt.jpg" class="img-responsive" alt=""/>
+				 <img src="<?php echo base_url(); ?>assets/images/abt.jpg" class="img-responsive" alt=""/>
 			 </div>
 			 <div class="col-md-7 abt-info-pic">
 				 <h3>Vestibulum congue neque quis ex fringilla, in pellentesque massa gravida.</h3>
@@ -129,28 +83,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  <h3>Our Team</h3>	  
 			  <div class="grid_4">
 				<div class="team-grid">
-						   <img src="images/a1.jpg" alt="">
+						   <img src="<?php echo base_url(); ?>assets/images/a1.jpg" alt="">
 						   <h4>Phasellus scipitilifen lus.</h4>
 						  <p>Kuspendisse laoreet augue iderti wer  interdum merti oremolo lectusto odio, sedorolu fringilla estero libero. </p>
 					  </div>
 			  </div>
 			  <div class="grid_4">
 				 <div class="team-grid">
-						   <img src="images/a2.jpg" alt="">
+						   <img src="<?php echo base_url(); ?>assets/images/a2.jpg" alt="">
 						   <h4>Phasellus scipitilifen lus.</h4>
 						  <p>Kuspendisse laoreet augue iderti wer  interdum merti oremolo lectusto odio, sedorolu fringilla estero libero. </p>
 					  </div>
 			  </div>
 			  <div class="grid_4 span66">
 				<div class="team-grid">
-						   <img src="images/a3.jpg" alt="">
+						   <img src="<?php echo base_url(); ?>assets/images/a3.jpg" alt="">
 						   <h4>Phasellus scipitilifen lus.</h4>
 						  <p>Kuspendisse laoreet augue iderti wer  interdum merti oremolo lectusto odio, sedorolu fringilla estero libero. </p>
 					  </div>
 			  </div>      
 			  <div class="grid_4">				 
 					  <div class="team-grid">
-						   <img src="images/a4.jpg" alt="">
+						   <img src="<?php echo base_url(); ?>assets/images/a4.jpg" alt="">
 						   <h4>Phasellus scipitilifen lus.</h4>
 						  <p>Kuspendisse laoreet augue iderti wer  interdum merti oremolo lectusto odio, sedorolu fringilla estero libero. </p>
 					  </div>					  
