@@ -35,6 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 
 		 <h2 >Reviews</h2>
 		 <div class='container'>
+			<div class="row">
 		 		<?php
 		 		
 		 			foreach ($result->result() as $row) {
@@ -54,11 +55,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href='".base_url("/index.php/Youreview/delete/".$row->id)."' class='btn btn-primary'><span class='glyphicon glyphicon-trash'></span></a>
 					 </div>
 				 	</div>
+					</div>
 				 	 ";
 		 			}
 		 		?>
 		 		<div class='clearfix'> </div>
 		 		</div>
+		</div>
 </div>
 <!-- footer -->
 <div class="footer">

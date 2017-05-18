@@ -159,7 +159,7 @@ class youreview extends CI_Controller {
         }
 
 		$data = array(
-			'id' => $idGame,
+			#'id' => $idGame,
 			'title' => $title,
 			'image' => $post,
 			'genre' => $genre,
@@ -168,12 +168,30 @@ class youreview extends CI_Controller {
 			'description' => $description
 			);
 		//$where = "id=".$idGame;
-
+		$this->db->where('id',$id);
 		//$this->db->replace('game',$data);
-		$str = $this->db->replace('game',$data);
+		$this->db->update('game',$data);
+		redirect(base_url('/index.php/Youreview/details/'.$id), 'refresh');
 		//echo $str;
 		//redirect(base_url('index.php/youreview/'));
 
 		//UPDATE `game` SET `description` = 'Pahlawans' WHERE `game`.`id` = 'AVE2'
+	}
+	
+	public function delete($id)
+	{
+		$idGame = $id;
+
+		$query = $this->db->query('SELECT * FROM game WHERE id="'.$idGame.'"');
+		$res = $query->row();
+		$data['res'] = $res;
+		
+		#apus child row dulu
+		$data = array('idgame' => $id);
+		$this->db->delete('review', $data);
+		
+		#apus game di parent row
+		$this->db->delete('game', array('id' => $id));
+		redirect(base_url('/index.php/Youreview/reviews/'), 'refresh');
 	}
 }
