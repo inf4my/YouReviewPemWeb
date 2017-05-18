@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 18, 2017 at 05:35 PM
+-- Generation Time: May 18, 2017 at 07:41 PM
 -- Server version: 5.7.13-log
 -- PHP Version: 7.0.8
 
@@ -94,7 +94,9 @@ INSERT INTO `review` (`id`, `name`, `idgame`, `score`, `reviews`, `likes`) VALUE
 (3, 'dummy', 'AVE2', 1, 'Anjayy', 0),
 (4, 'dummy', 'TRA3', 4, 'Ayee', 0),
 (5, 'dummy', 'TRA3', 2, 'dasdsa', 0),
-(6, 'Kevon', 'TRA3', 5, 'coba', 0);
+(6, 'Kevon', 'TRA3', 5, 'coba', 0),
+(7, 'Kevin', 'TRA3', 5, 'coba', 0),
+(8, 'kepon', 'AVE5', 5, 'dasdasdaswkwkwkw', 0);
 
 --
 -- Indexes for dumped tables
@@ -128,7 +130,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Constraints for dumped tables
 --

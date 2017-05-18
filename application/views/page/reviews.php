@@ -50,6 +50,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 	<h4><a href='single.html'>$row->title</a></h4>
 						<p>$row->description</p>
 						<a href='".base_url("/index.php/Youreview/details/".$row->id)."' class='btn btn-primary'><span class='glyphicon glyphicon-eye-open'></span></a>
+						<a href='".base_url("/index.php/Youreview/update/".$row->id)."' class='btn btn-primary'><span class='glyphicon glyphicon-edit'></span></a>
+						<a href='".base_url("/index.php/Youreview/delete/".$row->id)."' class='btn btn-primary'><span class='glyphicon glyphicon-trash'></span></a>
 					 </div>
 				 	</div>
 				 	 ";
