@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <!--banner-info-->	
 	 <div class="banner-info">
-		  <div class="container">
+		  <div class="container"">
 			  <div class="logo">
 					 <h1><a href="<?php echo base_url(''); ?>">GAME BOX</a></h1>
 			  </div>
@@ -16,7 +16,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						 <li><a href="<?php echo base_url('index.php/youreview/gallery'); ?>">Gallery</a></li>
 				  </ul>
 			 </div>	
-			 
 			 <div class="clearfix"></div>
 		 </div>
 	 </div>

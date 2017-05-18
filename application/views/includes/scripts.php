@@ -2,6 +2,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.flexisel.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/lightbox-plus-jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/responsiveslides.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/rangeslider.min.js"></script>
 
 <script>
 		$(function () {
