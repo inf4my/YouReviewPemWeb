@@ -21,6 +21,11 @@ class youreview extends CI_Controller {
 	}
 	public function reviews()
 	{
+		$query = $this->db->query('SELECT * FROM game');
+
+		$this->load->helper('url');
+
+		$data['result'] = $query;
 		$data['style']= $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
@@ -35,5 +40,10 @@ class youreview extends CI_Controller {
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
 		$data['header']= $this->load->view('template/header', NULL, TRUE);
 		$this->load->view('page/gallery', $data);
+	}
+
+	public function details()
+	{
+		
 	}
 }
