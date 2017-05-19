@@ -25,8 +25,6 @@ class youreview extends CI_Controller {
 	{
 		$query = $this->db->query('SELECT * FROM game');
 
-		$this->load->helper('url');
-
 		$data['result'] = $query;
 		$data['style']= $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
@@ -88,7 +86,6 @@ class youreview extends CI_Controller {
 		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$data['res'] = $res;
-		$this->load->helper('form');
 		$this->load->view('page/form',$data);
 	}
 
