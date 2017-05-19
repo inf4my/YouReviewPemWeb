@@ -8,6 +8,7 @@ class youreview extends CI_Controller {
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
 		$data['header']= $this->load->view('template/header', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$this->load->view('page/index', $data);
 	}
 	
@@ -17,6 +18,7 @@ class youreview extends CI_Controller {
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
 		$data['header']= $this->load->view('template/header', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$this->load->view('page/about', $data);
 	}
 	public function reviews()
@@ -30,6 +32,7 @@ class youreview extends CI_Controller {
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
 		$data['header']= $this->load->view('template/header', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$this->load->view('page/reviews', $data);
 	}
 	
@@ -39,6 +42,7 @@ class youreview extends CI_Controller {
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
 		$data['header']= $this->load->view('template/header', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$this->load->view('page/gallery', $data);
 	}
 
@@ -58,6 +62,7 @@ class youreview extends CI_Controller {
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
 		$data['header'] = $this->load->view('template/header', NULL, TRUE);
 		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$data['res'] = $res;
 		$data['sb'] = $sb;
 		$data['b'] = $b;
@@ -81,6 +86,7 @@ class youreview extends CI_Controller {
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
 		$data['header'] = $this->load->view('template/header', NULL, TRUE);
 		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$data['res'] = $res;
 		$this->load->helper('form');
 		$this->load->view('page/form',$data);
@@ -108,6 +114,8 @@ class youreview extends CI_Controller {
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
 		$data['header'] = $this->load->view('template/header', NULL, TRUE);
 		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 
 		//$this->load->view('page/details',$data);
 		redirect(base_url('index.php/youreview/reviews'));
@@ -125,6 +133,7 @@ class youreview extends CI_Controller {
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
 		$data['header'] = $this->load->view('template/header', NULL, TRUE);
 		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 
 		$this->load->helper('form');
 
