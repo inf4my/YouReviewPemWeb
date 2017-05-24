@@ -42,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a class='example-image-link'
 						href='".base_url("/index.php/Youreview/details/".$row->id)."' data-lightbox='example-set' 
 						data-title='Click the right half of the image to move forward.'>
-						<img class='example-image' src='".base_url("upload/".$row->image)."' alt=''/></a>
+						<img style='height:500px;width:300px' class='example-image' src='".base_url("upload/".$row->image)."' alt=''/></a>
 						</div>";
 				}
 				?>
