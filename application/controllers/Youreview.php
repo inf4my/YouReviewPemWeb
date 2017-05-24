@@ -26,8 +26,6 @@ class youreview extends CI_Controller {
 		$this->load->model('Review');
 		
 		$result = $this->Review->get_all();
-		
-		#$query = $this->db->query('SELECT * FROM game');
 
 		$data['result'] = $result;
 		$data['style']= $this->load->view('includes/style', NULL, TRUE);
@@ -53,20 +51,11 @@ class youreview extends CI_Controller {
 
 	public function details($id)
 	{
-		#$idGame = $id;
 		$this->load->model('Review');
 		
 		$gameInfo = $this->Review->get_game($id);
 		
 		$reviews = $this->Review->get_detail_review($id);
-
-		#$query = $this->db->query('SELECT * FROM game WHERE id="'.$idGame.'"');
-		#$sb = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=5 AND idgame="'.$idGame.'"');
-		#$b = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=4 AND idgame="'.$idGame.'"');
-		#$c = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=3 AND idgame="'.$idGame.'"');
-		#$tb = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=2 AND idgame="'.$idGame.'"');
-		#$stb = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=1 AND idgame="'.$idGame.'"');
-		#$res = $query->row();
 
 		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
@@ -100,7 +89,6 @@ class youreview extends CI_Controller {
 	public function add_review($id)
 	{
 		$idGame = $id;
-		//echo $idGame;
 
 		$nilai = $_POST['rating'];
 		$komen = $_POST['review'];
@@ -122,7 +110,6 @@ class youreview extends CI_Controller {
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 
-		//$this->load->view('page/details',$data);
 		redirect(base_url('index.php/youreview/reviews'));
 	}
 
@@ -139,8 +126,6 @@ class youreview extends CI_Controller {
 		$data['header'] = $this->load->view('template/header', NULL, TRUE);
 		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
-
-		$this->load->helper('form');
 
 		$this->load->view('page/update',$data);
 	}
@@ -182,8 +167,8 @@ class youreview extends CI_Controller {
 			);
 		$this->db->where('id',$id);
 		$this->db->update('game',$data);
+
 		redirect(base_url('/index.php/Youreview/details/'.$id), 'refresh');
-		//UPDATE `game` SET `description` = 'Pahlawans' WHERE `game`.`id` = 'AVE2'
 	}
 	
 	public function delete($id)
@@ -201,5 +186,20 @@ class youreview extends CI_Controller {
 		#apus game di parent row
 		$this->db->delete('game', array('id' => $id));
 		redirect(base_url('/index.php/Youreview/reviews/'), 'refresh');
+	}
+
+	public function login(){
+
+		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
+		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
+		$data['header'] = $this->load->view('template/header', NULL, TRUE);
+		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
+
+		$this->load->view('page/login',$data);
+	}
+
+	public function loginProcess(){
+		
 	}
 }
