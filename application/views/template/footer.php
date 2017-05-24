@@ -4,8 +4,7 @@
 		 <div class="footer-grids">
 			 <div class="col-md-3 ftr-info">
 				 <h3>About Us</h3>
-				 <p>Sed faucibus mollis laoreet. Sed vehicula faucibus tristique lectus a orci molestie finibus. 
-				 Suspendisse pharetra, metus sed rutrum pretium.</p>
+				 <p>Web review ini dibuat sebagai tugas akhir mata kuliah Pemrograman Web UMN</p>
 			 </div>
 			 <div class="col-md-3 ftr-grid">
 				 <h3>Categories</h3>

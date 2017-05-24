@@ -27,24 +27,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 					<div class="slid banner1">
 						  <div class="caption">
-								<h3>Donec id diam nec ex luctus congue nec sed mi.</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec pellentesque ex. Morbi iaculis mi in varius auctor. Nullam feugiat erat ex, eu vehicula velit efficitur non.</p>
+								<h3>Absolutely Beautiful</h3>
+								<p>The review in this website is the truth. This website really is made for the gamers, by the gamers</p>
 						  </div>
 					</div>
 				
 				
 					 <div class="slid banner2">	
 						  <div class="caption">
-								<h3>Pellentesque eu ante quis elit interdum cursus.</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec pellentesque ex. Morbi iaculis mi in varius auctor. Nullam feugiat erat ex, eu vehicula velit efficitur non.</p>
+								<h3>The number 1 website you should visit to get reviews</h3>
+								<p>-Seymour Butts, professional gamer</p>
 						  </div>
 					 </div>
 				
 				
 					<div class="slid banner3">	
 						<div class="caption">
-							<h3>Fusce id urna ut felis feugiat fringilla sed quis nisl.</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec pellentesque ex. Morbi iaculis mi in varius auctor. Nullam feugiat erat ex, eu vehicula velit efficitur non.</p>
+							<h3>Blows your mind</h3>
+							<p>-John Doe, highly acclaimed game critiques</p>
 						</div>
 					</div>
 				
@@ -104,11 +104,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="poster">
 	 <div class="container">
 		 <div class="poster-info">
-			 <h3>Nunc cursus dui in metus efficitur, sit amet ullamcorper dolor viverra.</h3>
-			 <p>Proin ornare metus eros, quis mattis lorem venenatis eget. Curabitur eget dui euismod,
-			 varius nisl eu, pharetra lacus. Sed vehicula tempor leo. Aenean dictum suscipit magna vel
-			 tempus. Aliquam nec dui dolor. Quisque scelerisque aliquet est et dignissim. Morbi magna quam, molestie sed fermentum et, elementum at dolor</p>
-			  <a class="hvr-bounce-to-bottom" href="reviews.html">Read More</a>
+			 <h3>Come check out the reviews contributed by our members</h3>
+			 <p>The reviews are made by the player. This website encourage you to be "judgy" (on the game of course)</p>
+			  <a class="hvr-bounce-to-bottom" href="<?php echo base_url('index.php/youreview/reviews'); ?>">Read More</a>
 		 </div>
 	 </div>
 </div>

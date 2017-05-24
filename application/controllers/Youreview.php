@@ -23,9 +23,13 @@ class youreview extends CI_Controller {
 	}
 	public function reviews()
 	{
-		$query = $this->db->query('SELECT * FROM game');
+		$this->load->model('Review');
+		
+		$result = $this->Review->get_all();
+		
+		#$query = $this->db->query('SELECT * FROM game');
 
-		$data['result'] = $query;
+		$data['result'] = $result;
 		$data['style']= $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
@@ -36,37 +40,41 @@ class youreview extends CI_Controller {
 	
 	public function gallery()
 	{
+		$this->load->model('Game');
+		$games = $this->Game->get_all();
 		$data['style']= $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
 		$data['header']= $this->load->view('template/header', NULL, TRUE);
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
+		$data['Games'] = $games;
 		$this->load->view('page/gallery', $data);
 	}
 
 	public function details($id)
 	{
-		$idGame = $id;
+		#$idGame = $id;
+		$this->load->model('Review');
+		
+		$gameInfo = $this->Review->get_game($id);
+		
+		$reviews = $this->Review->get_detail_review($id);
 
-		$query = $this->db->query('SELECT * FROM game WHERE id="'.$idGame.'"');
-		$sb = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=5 AND idgame="'.$idGame.'"');
-		$b = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=4 AND idgame="'.$idGame.'"');
-		$c = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=3 AND idgame="'.$idGame.'"');
-		$tb = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=2 AND idgame="'.$idGame.'"');
-		$stb = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=1 AND idgame="'.$idGame.'"');
-		$res = $query->row();
+		#$query = $this->db->query('SELECT * FROM game WHERE id="'.$idGame.'"');
+		#$sb = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=5 AND idgame="'.$idGame.'"');
+		#$b = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=4 AND idgame="'.$idGame.'"');
+		#$c = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=3 AND idgame="'.$idGame.'"');
+		#$tb = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=2 AND idgame="'.$idGame.'"');
+		#$stb = $this->db->query('SELECT name,reviews,likes FROM review WHERE score=1 AND idgame="'.$idGame.'"');
+		#$res = $query->row();
 
 		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
 		$data['header'] = $this->load->view('template/header', NULL, TRUE);
 		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
-		$data['res'] = $res;
-		$data['sb'] = $sb;
-		$data['b'] = $b;
-		$data['c'] = $c;
-		$data['tb'] = $tb;
-		$data['stb'] = $stb;
+		$data['res'] = $gameInfo;
+		$data['sb'] = $reviews;
 
 
 		$this->load->view('page/details',$data);
@@ -165,7 +173,6 @@ class youreview extends CI_Controller {
         }
 
 		$data = array(
-			#'id' => $idGame,
 			'title' => $title,
 			'image' => $post,
 			'genre' => $genre,
@@ -173,14 +180,9 @@ class youreview extends CI_Controller {
 			'alson' => $alson,
 			'description' => $description
 			);
-		//$where = "id=".$idGame;
 		$this->db->where('id',$id);
-		//$this->db->replace('game',$data);
 		$this->db->update('game',$data);
 		redirect(base_url('/index.php/Youreview/details/'.$id), 'refresh');
-		//echo $str;
-		//redirect(base_url('index.php/youreview/'));
-
 		//UPDATE `game` SET `description` = 'Pahlawans' WHERE `game`.`id` = 'AVE2'
 	}
 	

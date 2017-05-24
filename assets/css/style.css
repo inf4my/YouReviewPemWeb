@@ -2207,6 +2207,7 @@ span.menu {
   padding: 20px 19px 20px 19px;
 }
 .grid_4 {
+	position: center ;
   width: 47%;
   margin: 0 3% 3% 0;
 }

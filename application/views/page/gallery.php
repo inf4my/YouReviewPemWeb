@@ -36,7 +36,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h2>Gallery</h2>
 			<div class="gallery-bottom">
 				<div class="gallery-1">
-					<div class="col-md-3 gallery-grid">
+				<?php
+				foreach($Games->result() as $row){
+						echo "<div class='col-md-3 gallery-grid'>
+						<a class='example-image-link'
+						href='".base_url("/index.php/Youreview/details/".$row->id)."' data-lightbox='example-set' 
+						data-title='Click the right half of the image to move forward.'>
+						<img class='example-image' src='".base_url("upload/".$row->image)."' alt=''/></a>
+						</div>";
+				}
+				?>
+					<!--<div class="col-md-3 gallery-grid">
 						<a class="example-image-link" href="images/r4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="<?php echo base_url(); ?>assets/images/r4.jpg" alt=""/></a>
 					</div>
 					<div class="col-md-3 gallery-grid">
@@ -79,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a class="example-image-link" href="images/gl11.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="<?php echo base_url(); ?>assets/images/gl11.jpg" alt=""/></a>
 					</div>
 					<div class="clearfix"></div>
-				</div>
+				</div>-->
 				
 		 </div>
 	 </div>

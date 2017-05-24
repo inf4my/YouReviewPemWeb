@@ -40,11 +40,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 		
 		 			foreach ($result->result() as $row) {
 		 				echo "
-		 			<div class='review-md1'>
 		 			<div class='col-md-4 sed-md'>
+		 			<div>
 				 	 <div class='col-1'>
-						 <a href='single.html'>
-						 <img class='img-responsive'
+						 <a href='".base_url("/index.php/Youreview/details/".$row->id)."'>
+						 <img style='height:500px;width:300px' class='img-responsive'
 						 src='".base_url("upload/".$row->image)."' 
 						 >
 						 </a>

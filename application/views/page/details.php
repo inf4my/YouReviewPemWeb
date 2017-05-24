@@ -52,36 +52,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Sangat Bagus</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Punya user yang login</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
-        <?php
-        foreach ($sb->result() as $row) {
-         	echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br><br>";
-         } 
-        ?>
+        <p>Belom ada isinya coy</p>
         </div>
       </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Bagus</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Punya user lain</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-        <?php
-        	foreach ($b->result() as $row) {
+		<?php
+        	foreach ($sb->result() as $row) {
          	echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br><br>";
          	} 
         ?>
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <!--<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Cukup</a>
@@ -130,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         ?>
         </div>
       </div>
-    </div>
+    </div>-->
 
   </div> 
 		</div>
