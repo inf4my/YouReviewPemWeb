@@ -33,13 +33,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="col-sm-5" style="margin-top:170px">
 		<img style="width:250px;height:400px;" src="<?php echo base_url('upload/' . $res->image);?>">
 		</div>
-
+		//
+		<div class="col-sm-5" style="margin-top:100px;">
 		<a style='float:left;margin-left: 500px;' 
 		href='<?php echo base_url('index.php/Youreview/reviews');?>' 
 		class='btn btn-primary col-xs-offset-10' role='button'><span class='glyphicon glyphicon glyphicon-step-backward'
 		style='margin-bottom: 5px' aria-hidden='true'></span> Back</a>
+		<br>
+		<h2>Final Result from User Reviews</h2>
+		<?php echo "<h2>".$likert."</h2>";?>
 		
-		<div class="col-sm-5" style="margin-top:100px;">
+		
 		<?php
 			echo "<h2>".$res->title."<h3 class='text-muted'>Game Details</h3></h2>";
 			echo "Genre : ".$res->genre."<br>";
@@ -120,57 +124,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
       </div>
     </div>
-    <!--<div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Cukup</a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
-        	<?php
-        	foreach ($c->result() as $row) {
-         	echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br><br>";
-         	} 
-        ?>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Tidak Bagus</a>
-        </h4>
-      </div>
-      <div id="collapse4" class="panel-collapse collapse">
-        <div class="panel-body">
-        <?php
-        	foreach ($tb->result() as $row) {
-         	echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br><br>";
-         	} 
-        ?>
-        </div>
-      </div>
-    </div>
-
-        <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Sangat Tidak Bagus</a>
-        </h4>
-      </div>
-      <div id="collapse5" class="panel-collapse collapse">
-        <div class="panel-body">
-        <?php
-        	foreach ($stb->result() as $row) {
-         	echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br><br>";
-         	} 
-        ?>
-        </div>
-      </div>
-    </div>-->
-
   </div> 
 		</div>
 		</div>

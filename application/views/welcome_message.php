@@ -80,6 +80,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<code>application/controllers/Welcome.php</code>
 
 		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+		<?php
+		echo $jmlhResponden."<br>";
+		echo $score5."<br>";
+		echo $score4."<br>";
+		echo $score3."<br>";
+		echo $score2."<br>";
+		echo $score1."<br>";
+		echo $hasil."<br>";
+		?>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>

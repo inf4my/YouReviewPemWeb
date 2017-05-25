@@ -61,5 +61,18 @@ class Review extends CI_Model{
 		 $this->db->update('review', array('likes' => $jmlhLike));
 		 return $row->idgame;
 	}
+	public function get_specific_score($idgame, $score){
+		$this->db->where(array('idgame' => $idgame, 'score' => $score));
+		$this->db->from('review');
+		$count = $this->db->count_all_results();
+		return $count;
+	}
+	
+	public function get_count($idGame){
+		$this->db->where('idgame', $idGame);
+		$this->db->from('review');
+		$count = $this->db->count_all_results();
+		return $count;
+	}
 }
 ?>

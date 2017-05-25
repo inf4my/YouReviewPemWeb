@@ -57,6 +57,7 @@ class youreview extends CI_Controller {
 		$this->load->model('Review');
 		
 		$gameInfo = $this->Review->get_game($id);
+		$likert = $this->get_likert_value($id);
 		
 		$reviews = $this->Review->get_detail_review($id);
 		$individuReview = $this->Review->get_individual_review($id, $this->session->uName);
@@ -69,6 +70,7 @@ class youreview extends CI_Controller {
 		$data['res'] = $gameInfo;
 		$data['sb'] = $reviews;
 		$data['individu'] = $individuReview;
+		$data['likert'] = $likert;
 
 
 		$this->load->view('page/details',$data);
@@ -289,5 +291,41 @@ class youreview extends CI_Controller {
 		$data['titleArray'] = $gameTitleArray;
 
 		$this->load->view('page/userPage',$data);
+	}
+	public function get_likert_value($idGame){
+		$this->load->model('Review');
+		$count = $this->Review->get_count($idGame);
+		$jmlhScore5 = $this->Review->get_specific_score($idGame, 5);
+		$jmlhScore4 = $this->Review->get_specific_score($idGame, 4);
+		$jmlhScore3 = $this->Review->get_specific_score($idGame, 3);
+		$jmlhScore2 = $this->Review->get_specific_score($idGame, 2);
+		$jmlhScore1 = $this->Review->get_specific_score($idGame, 1);
+		$score5 = $jmlhScore5*5;
+		$score4 = $jmlhScore4*4;
+		$score3 = $jmlhScore3*3;
+		$score2 = $jmlhScore2*2;
+		$score1 = $jmlhScore1*1;
+		$sum = $score1+ $score2+ $score3+ $score4+ $score5;
+		$Y = 5* $count;
+		$X = 1* $count;
+		$finalResult =  $sum / $Y * 100;
+		#$operan = array(
+	#				'jmlhResponden' => $count,
+	#				'score5' => $score5,
+	#				'score4' => $score4,
+	#				'score3' => $score3,
+	#				'score2' => $score2,
+	#				'score1' => $score1
+	#	);
+		
+		return $finalResult;
+		#$data['jmlhResponden'] = $count;
+		#$data['score5'] = $score5;
+		#$data['score4'] = $score4;
+		#$data['score3'] = $score3;
+		#$data['score2'] = $score2;
+		#$data['score1'] = $score1;
+		#$data['hasil'] = $finalResult;
+		#$this->load->view('welcome_message', $data);
 	}
 }
