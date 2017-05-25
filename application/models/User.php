@@ -18,6 +18,7 @@ class User extends CI_Model{
 		else{
 			$msg = "Gagal";
 		}
+		//echo $msg;
 		return $userSession;
 	}
 	

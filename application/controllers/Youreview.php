@@ -283,7 +283,9 @@ class youreview extends CI_Controller {
 			array_push($gameTitleArray,$gameTitle->title);
 		}
 		
-		
+		$whois = $this->session->uName;
+		//echo $this->session->uName;
+
 		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
 		$data['header'] = $this->load->view('template/header', NULL, TRUE);
@@ -292,7 +294,28 @@ class youreview extends CI_Controller {
 		$data['userActivity'] = $result;
 		$data['titleArray'] = $gameTitleArray;
 
-		$this->load->view('page/userPage',$data);
+		if($whois=="admin") 
+		{
+			//echo "yang login admin woy";
+			$data['alson'] = array(
+				// source : https://www.gamefaqs.com/games/systems
+				'PlayStation 4' => 'PS4',
+				'PSP' => 'PSP',
+				'PC' => 'PC',
+				'3DS' => '3DS',
+				'Nintendo DS' => 'DS',
+				'Wii' => 'Wii',
+				'Xbox One' => 'Xbox One',
+				'Xbox 360' => 'Xbox 360',
+				'Nintendo Switch' => 'Nintendo Switch'
+				);
+			$this->load->view('page/adminPage',$data);
+		}
+		else
+		{
+			//echo "yang login bukan admin";
+			$this->load->view('page/userPage',$data);
+		}
 	}
 	public function get_likert_value($idGame){
 		$this->load->model('Review');
@@ -335,4 +358,5 @@ class youreview extends CI_Controller {
 		#$data['hasil'] = $finalResult;
 		#$this->load->view('welcome_message', $data);
 	}
+
 }

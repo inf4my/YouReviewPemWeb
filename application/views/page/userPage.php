@@ -36,12 +36,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<div class="col-sm-5" style="margin-top:100px;">
 		<?php
-			echo "<h2>".$this->session->uName."</h2>";
+			echo "<h2>Welcome, ".$this->session->uName."</h2>";
 		?>
 		<br><br>
 		
 		<!--<a style='float:left;margin-left: 500px;' 
-		href='<?php echo base_url('index.php/Youreview/open_review/'.$res->id);?>' 
+		href='<?php //echo base_url('index.php/Youreview/open_review/'.$res->id);?>' 
 		class='btn btn-primary col-xs-offset-10' role='button'><span class='glyphicon glyphicon-plus-sign'
 		style='margin-bottom: 5px' aria-hidden='true'></span> Review</a>
 		<h2>Review</h2>-->
