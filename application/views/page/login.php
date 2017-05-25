@@ -37,7 +37,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'type' => 'text',
 			'class' => 'form-control',
 			'name' => 'username',
-			'placeholder' => 'Username'
+			'placeholder' => 'Username',
+			'required' => 'true'
 		));
 		?>
 		</div>
@@ -53,7 +54,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'type' => 'password',
 			'class' => 'form-control',
 			'name' => 'password',
-			'placeholder' => '********'
+			'placeholder' => '********',
+			'required' => 'true'
 		));
 		?>
 		</div>

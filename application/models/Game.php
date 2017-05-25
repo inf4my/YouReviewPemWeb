@@ -13,7 +13,7 @@ class Game extends CI_Model{
 	}
 	
 	public function get_specific($idDariReview){
-		$query = $this->db->query('SELECT title FROM game WHERE id ="'.$idDariReview.'" ');
+		$query = $this->db->query('SELECT title, image FROM game WHERE id ="'.$idDariReview.'" ');
 		return $query->row();
 	}
 

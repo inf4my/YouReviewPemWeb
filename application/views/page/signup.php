@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Form Login</title>
+	<title>Form Sign Up</title>
 	<?php
 	echo $scripts;
 	echo $style;
@@ -32,7 +32,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'type' => 'text',
 			'class' => 'form-control',
 			'name' => 'namalengkap',
-			'placeholder' => 'Nama Lengkap'
+			'placeholder' => 'Nama Lengkap',
+			'required' => 'true'
 		));
 		?>
 		</div>
@@ -47,7 +48,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		array(
 			'type' => 'date',
 			'class' => 'form-control',
-			'name' => 'ttl'
+			'name' => 'ttl',
+			'required' => 'true'
 		));
 		?>
 		</div>
@@ -62,7 +64,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		array(
 			'type' => 'text',
 			'class' => 'form-control',
-			'name' => 'alamat'
+			'name' => 'alamat',
+			'required' => 'true'
 		));
 		?>
 		</div>
@@ -78,7 +81,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'type' => 'text',
 			'class' => 'form-control',
 			'name' => 'username',
-			'placeholder' => 'Username'
+			'placeholder' => 'Username',
+			'required' => 'true'
+		));
+		?>
+		</div>
+		</div>
+		
+		<div class="form-group">
+		<div class="col-sm-1 control-label">
+		<?php echo form_label('Email address '); ?>
+		</div>
+		<div class="col-sm-4">
+		<?php echo form_input(
+		array(
+			'type' => 'email',
+			'class' => 'form-control',
+			'name' => 'email',
+			'placeholder' => 'Username',
+			'required' => 'true'
 		));
 		?>
 		</div>
@@ -94,7 +115,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			'type' => 'password',
 			'class' => 'form-control',
 			'name' => 'password',
-			'placeholder' => '********'
+			'placeholder' => '********',
+			'required' => 'true'
+		));
+		?>
+		</div>
+		</div>
+		
+		<div class="form-group">
+		<div class="col-sm-1 control-label">
+		<?php echo form_label('Password Confirmation'); ?>
+		</div>
+		<div class="col-sm-4">
+		<?php echo form_input(
+		array(
+			'type' => 'password',
+			'class' => 'form-control',
+			'name' => 'passwordConfirm',
+			'placeholder' => '********',
+			'required' => 'true'
 		));
 		?>
 		</div>

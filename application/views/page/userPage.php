@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Game Box a Games a Category Flat Bootstarp Responsive Website Template | About :: w3layouts</title>
+<title>YouReview <?php echo $this->session->uName?> Page</title>
 <?php
 	echo $scripts;
 	echo $style;

@@ -22,13 +22,14 @@ class User extends CI_Model{
 		return $userSession;
 	}
 	
-	public function signup($namalengkap, $ttl, $alamat, $username, $password){
+	public function signup($namalengkap, $ttl, $alamat, $username, $mail, $password){
 		$salt = uniqid();
 		$passwordFinal = md5($password.$salt);
 		//echo $passwordFinal;
 
 		$data = array(
 			'username' => $username,
+			'email' => $mail,
 			'password' => $passwordFinal,
 			'salt' => $salt,
 			'namalengkap' => $namalengkap,
@@ -44,6 +45,13 @@ class User extends CI_Model{
 		else{
 			echo "Gagal";
 		}
+	}
+	
+	public function check_existing($username){
+		$tableUser = $this->db->query('SELECT * FROM user WHERE username="'.$username.'"');
+		#$this->db->where('username',$username);
+		#$tableUser = $this->db->get('user',1);
+		return $tableUser;
 	}
 	
 	public function show_user_activity($user){

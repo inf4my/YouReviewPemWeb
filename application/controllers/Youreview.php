@@ -144,6 +144,8 @@ class youreview extends CI_Controller {
 	}
 
 	public function update_form($id){
+		$this->load->model('Review');
+		$this->load->model('Game');
 		$idGame = $id;
 
 		$title = $_POST['title'];
@@ -160,8 +162,9 @@ class youreview extends CI_Controller {
 
         if (!$this->upload->do_upload('image'))
         {
-        	$conn = $this->db->query("SELECT * FROM game WHERE id='$idGame'");
-        	$result = $conn->row();
+			$result = $this->Game->get_specific($id);
+        	#$conn = $this->db->query("SELECT * FROM game WHERE id='$idGame'");
+        	#$result = $conn->row();
         	$post = $result->image;
         }
         else
@@ -170,7 +173,7 @@ class youreview extends CI_Controller {
 			$post = $this->upload->data('file_name');
         }
 
-		$data = array(
+		$isian = array(
 			'title' => $title,
 			'image' => $post,
 			'genre' => $genre,
@@ -178,8 +181,9 @@ class youreview extends CI_Controller {
 			'alson' => $alson,
 			'description' => $description
 			);
-		$this->db->where('id',$id);
-		$this->db->update('game',$data);
+		#$this->db->where('id',$id);
+		#$this->db->update('game',$data);
+		$this->Review->update_title($id, $isian);
 
 		redirect(base_url('/index.php/Youreview/details/'.$id), 'refresh');
 	}
@@ -212,18 +216,30 @@ class youreview extends CI_Controller {
 	}
 
 	public function registerProcess(){
+		$this->load->library('form_validation');
 		$namalengkap = $_POST['namalengkap'];
 		$ttl = $_POST['ttl'];
 		$alamat = $_POST['alamat'];
 		$username = $_POST['username'];
+		$mail = $_POST['email'];
 		$password = $_POST['password'];
+		$passwordConfirm = $_POST['passwordConfirm'];
 
 		//echo $namalengkap, " ",$ttl, " ", $alamat, " ", $username, " ", $password;
 
 		$this->load->model('User');
-		$this->User->signup($namalengkap, $ttl, $alamat, $username, $password);
-		//redirect(base_url($data->url), 'refresh');
-
+		$tabelUser = $this->User->check_existing($username);
+		if(isset($tabelUser->row()->username)){
+			echo "username already exists. Try using another username";
+			redirect(base_url('index.php/youreview/signup'), 'refresh');
+		}
+		else if($password != $passwordConfirm){
+			echo "Password not matched";
+		}
+		else{
+			$this->User->signup($namalengkap, $ttl, $alamat, $username, $mail, $password);
+			redirect(base_url(), 'refresh');
+		}
 	}
 
 	public function login(){

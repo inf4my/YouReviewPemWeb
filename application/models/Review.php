@@ -74,5 +74,10 @@ class Review extends CI_Model{
 		$count = $this->db->count_all_results();
 		return $count;
 	}
+	
+	public function update_title($id, $data){
+		$this->db->where('id',$id);
+		$this->db->update('game',$data);
+	}
 }
 ?>

@@ -31,11 +31,11 @@ CREATE TABLE IF NOT EXISTS `game` (
 -- Dumping data for table youreview.game: ~6 rows (approximately)
 /*!40000 ALTER TABLE `game` DISABLE KEYS */;
 INSERT INTO `game` (`id`, `title`, `image`, `genre`, `daterelease`, `alson`, `description`) VALUES
-	('AVE2', 'For Honor', 'forhonor_knight_mobile.jpg', 'Action', '2017-05-18', 'PS4, Xbox One', 'Game perang-perangan pake senjata'),
+	('AVE2', 'For Honor', 'forhonor_knight_mobile.jpg', 'Action', '2017-02-14', 'PS4, Xbox One', 'Game perang-perangan pake senjata'),
 	('AVE5', 'Fallout: New Vegas', '1462729837971.png', 'Action', '2008-10-19', 'PS3, Xbox 360, PC', 'Game RPG, bisa jadi koboi'),
-	('AVE6', 'LA Noire', 'l_a__noire_by_filthymonkey-d3jehc7.jpg', 'Action', '2017-05-18', 'PS3, PC', 'Game jadi detektif'),
-	('TRA1', 'Metal Gear Solid V: The Phantom Pain', 'Untitled-11.jpg', 'Action', '2017-05-18', 'PC, PS3, PS4, Xbox 360, Xbox one', 'Tembak-tembakan'),
-	('TRA3', 'Persona 5', 'p5.jpg', 'JRPG', '2017-04-04', 'PS4, PS3', 'Simulasi anak sekolahan'),
+	('AVE6', 'LA Noire', 'l_a__noire_by_filthymonkey-d3jehc7.jpg', 'Action', '2011-05-17', 'PS3, PC', 'Game jadi detektif'),
+	('TRA1', 'Metal Gear Solid V: The Phantom Pain', 'Untitled-11.jpg', 'Action', '2015-09-01', 'PC, PS3, PS4, Xbox 360, Xbox one', 'Tembak-tembakan'),
+	('TRA3', 'Persona 5', 'p53.jpg', 'JRPG', '2017-04-04', 'PS4, PS3', 'Simulasi anak sekolahan'),
 	('TRA4', 'Transformers', 'transformers.jpg', 'Sci-Fi', '2017-05-18', 'XBOX', 'Robot');
 /*!40000 ALTER TABLE `game` ENABLE KEYS */;
 
@@ -86,6 +86,7 @@ INSERT INTO `review` (`id`, `name`, `idgame`, `score`, `reviews`, `likes`) VALUE
 -- Dumping structure for table youreview.user
 CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
   `salt` varchar(200) NOT NULL,
   `namalengkap` varchar(200) NOT NULL,
@@ -94,13 +95,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table youreview.user: ~4 rows (approximately)
+-- Dumping data for table youreview.user: ~5 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`username`, `password`, `salt`, `namalengkap`, `tanggallahir`, `alamat`) VALUES
-	('admin', '2c6754131b172df76c2fd80ab2143ec4', '5926e98291def', 'admin', '1996-04-20', 'BMR'),
-	('inf4my', '04f943fb38f7424b8b52c6fa44a8a94b', '592697356fbeb', 'Naufal Irfan', '1996-02-04', 'Tangerang'),
-	('jamalkun', 'bcfbafe0d458da543aba46d1be98ce2a', '5926c3451d8e4', 'Jamal-kun', '1945-04-20', 'Tangerang'),
-	('kevinlionery', '123', '123', 'Kevin Lionery', '1995-12-02', 'Taman Ubud Indah');
+INSERT INTO `user` (`username`, `email`, `password`, `salt`, `namalengkap`, `tanggallahir`, `alamat`) VALUES
+	('', '', 'bb745314da3374bb971bda2d66321f7e', '59275a556c19e', 'Naufal Irfan', '0000-00-00', 'BMR'),
+	('admin', '', '2c6754131b172df76c2fd80ab2143ec4', '5926e98291def', 'admin', '1996-04-20', 'BMR'),
+	('inf4my', '', '04f943fb38f7424b8b52c6fa44a8a94b', '592697356fbeb', 'Naufal Irfan', '1996-02-04', 'Tangerang'),
+	('jamalkun', '', 'bcfbafe0d458da543aba46d1be98ce2a', '5926c3451d8e4', 'Jamal-kun', '1945-04-20', 'Tangerang'),
+	('kevinlionery', '', '123', '123', 'Kevin Lionery', '1995-12-02', 'Taman Ubud Indah');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
