@@ -272,6 +272,13 @@ class youreview extends CI_Controller {
 	public function profile($userName){
 		$this->load->model('User');
 		$result = $this->User->show_user_activity($userName);
+		$this->load->model('Game');
+		$gameTitleArray = array();
+		foreach($result as $row){
+			$gameTitle = $this->Game->get_specific($row->idgame);
+			array_push($gameTitleArray,$gameTitle->title);
+		}
+		
 		
 		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
@@ -279,6 +286,7 @@ class youreview extends CI_Controller {
 		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$data['userActivity'] = $result;
+		$data['titleArray'] = $gameTitleArray;
 
 		$this->load->view('page/userPage',$data);
 	}

@@ -48,8 +48,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<h2>Recent Reviews</h2>
 			<?php
+				$j = 0;
 				foreach($userActivity as $row){
-					echo "<h3>".$row->idgame."</h3>";
+					echo "<h3>".$titleArray[$j]."</h3>";
 					for($i = 0; $i<$row->score;$i++){
 						echo "<a><span class='glyphicon glyphicon glyphicon-star'
 							style='margin-bottom: 5px' aria-hidden='true'></a>";
@@ -57,6 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					#echo "<p>".$row->score."</p>";
 					echo "<p>".$row->reviews."</p>";
 					echo "<p>".$row->likes."</p>";
+					$j++;
 				}
 			?>
 		</div>

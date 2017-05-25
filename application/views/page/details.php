@@ -75,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Punya user yang login</a>
+          <?php echo "<a data-toggle='collapse' data-parent='#accordion' href='#collapse1'>".$this->session->uName."'s Reviews</a>"?>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
