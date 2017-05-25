@@ -13,7 +13,7 @@
 
 -- Dumping data for table youreview.game: ~6 rows (approximately)
 /*!40000 ALTER TABLE `game` DISABLE KEYS */;
-INSERT INTO `game` (`id`, `title`, `image`, `genre`, `daterelease`, `alson`, `description`) VALUES
+REPLACE INTO `game` (`id`, `title`, `image`, `genre`, `daterelease`, `alson`, `description`) VALUES
 	('AVE2', 'For Honor', 'forhonor_knight_mobile.jpg', 'Action', '2017-05-18', 'PS4, Xbox One', 'Game perang-perangan pake senjata'),
 	('AVE5', 'Fallout: New Vegas', '1462729837971.png', 'Action', '2017-05-18', 'PS3, Xbox 360', 'Game RPG, bisa jadi koboi'),
 	('AVE6', 'LA Noire', 'l_a__noire_by_filthymonkey-d3jehc7.jpg', 'Action', '2017-05-18', 'PS3, PC', 'Game jadi detektif'),
@@ -24,7 +24,7 @@ INSERT INTO `game` (`id`, `title`, `image`, `genre`, `daterelease`, `alson`, `de
 
 -- Dumping data for table youreview.information: ~5 rows (approximately)
 /*!40000 ALTER TABLE `information` DISABLE KEYS */;
-INSERT INTO `information` (`score`, `comment`) VALUES
+REPLACE INTO `information` (`score`, `comment`) VALUES
 	(1, 'Sangat Tidak Bagus'),
 	(2, 'Tidak Bagus'),
 	(3, 'Cukup'),
@@ -32,9 +32,9 @@ INSERT INTO `information` (`score`, `comment`) VALUES
 	(5, 'Sangat Bagus');
 /*!40000 ALTER TABLE `information` ENABLE KEYS */;
 
--- Dumping data for table youreview.review: ~7 rows (approximately)
+-- Dumping data for table youreview.review: ~8 rows (approximately)
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
-INSERT INTO `review` (`id`, `name`, `idgame`, `score`, `reviews`, `likes`) VALUES
+REPLACE INTO `review` (`id`, `name`, `idgame`, `score`, `reviews`, `likes`) VALUES
 	(1, 'kevin', 'AVE2', 3, 'Game apaan dah ni', NULL),
 	(3, 'dummy', 'AVE2', 1, 'Anjayy', 0),
 	(4, 'dummy', 'TRA3', 4, 'Ayee', 0),
