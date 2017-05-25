@@ -71,7 +71,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="panel-body">
 		<?php
         	foreach ($sb->result() as $row) {
-         	echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br><br>";
+         	echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br>";
+			echo "<a href='".base_url('index.php/Youreview/addLike/'.$row->id)."'
+					class='btn btn-primary' role='button'><span class='glyphicon glyphicon-plus-sign' style='margin-bottom: 5px' aria-hidden='true'>
+					</span> Review</a>";
+			echo "<br><br>";
          	} 
         ?>
         </div>

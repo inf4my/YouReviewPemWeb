@@ -88,20 +88,24 @@ class youreview extends CI_Controller {
 
 	public function add_review($id)
 	{
-		$idGame = $id;
+		$this->load->model('Review');
+		$goingToBeAdded = $this->Review->init($_POST['name'], $id, $_POST['rating'], $_POST['review']);
+		$this->Review->add_review($goingToBeAdded);
+		$this->Review->add_review($goingToBeAdded);
+		#$idGame = $id;
 
-		$nilai = $_POST['rating'];
-		$komen = $_POST['review'];
-		$nama = $_POST['name'];
+		#$nilai = $_POST['rating'];
+		#$komen = $_POST['review'];
+		#$nama = $_POST['name'];
 
-		$rev = array(
-			'name' => $nama,
-			'idgame' => $idGame,
-			'score' => $nilai,
-			'reviews' => $komen,
-			'likes' => 0
-			);
-		$tes = $this->db->insert('review',$rev);
+		#$rev = array(
+		#	'name' => $nama,
+		#	'idgame' => $idGame,
+		#	'score' => $nilai,
+		#	'reviews' => $komen,
+		#	'likes' => 0
+		#	);
+		#$tes = $this->db->insert('review',$rev);
 
 		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
