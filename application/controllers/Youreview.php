@@ -2,14 +2,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class youreview extends CI_Controller {
+
 	public function index()
 	{
+
 		$data['style']= $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
 		$data['header']= $this->load->view('template/header', NULL, TRUE);
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$this->load->view('page/index', $data);
+		
 	}
 	
 	public function about()
@@ -192,6 +195,28 @@ class youreview extends CI_Controller {
 		redirect(base_url('/index.php/Youreview/reviews/'), 'refresh');
 	}
 
+	public function signup(){
+		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
+		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
+		$data['header'] = $this->load->view('template/header', NULL, TRUE);
+		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
+
+		$this->load->view('page/signup',$data);
+	}
+
+	public function registerProcess(){
+		$namalengkap = $_POST['namalengkap'];
+		$ttl = $_POST['ttl'];
+		$alamat = $_POST['alamat'];
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+
+		$this->load->model('Register');
+		$this->Register->signup($namalengkap,$ttl, $alamat, $username, $password);
+
+	}
+
 	public function login(){
 
 		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
@@ -204,6 +229,31 @@ class youreview extends CI_Controller {
 	}
 
 	public function loginProcess(){
-		
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$this->load->model('Login');
+		$res = $this->Login->signin($username,$password);
+		//echo $res;
+		if($res=="Berhasil"){
+			//$data['stat'] = $_SESSION['STATUS']==1;
+				echo "Selamat Datang, ".$username;
+				// redirect(base_url('/index.php/Youreview/',$data));
+			//$user = $this->session->userdata('loggedin');
+			
+			//return isset($user);
+		}
+		else{
+			//echo "<script> alert('Wrong Username/Password'); </script>"; 
+			redirect(base_url('/index.php/Youreview/login'));
+		}
+	}
+
+	public function addLike($id)
+	{
+		$idGame = $id;
+		$this->load->model('Review');
+		$res = $this->Review->add_like($idGame);
+
+		//redirect(base_url('/index.php/Youreview/details/'.$idGame));
 	}
 }

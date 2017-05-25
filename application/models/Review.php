@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Review extends CI_Model{
 	#$id = "";
 	#$name = "";
@@ -43,12 +44,15 @@ class Review extends CI_Model{
 	}
 	
 	public function add_like($id){
-		$result = $this->db->query('SELECT likes FROM review WHERE idgame="'.$id.'"');
-		$like = $result.row();
-		$like = $like+1;
-		$this->db->set('likes', $like);
-		$this->db->where('id',$id);
-		$this->db->update('review');
+		echo $id;
+		// $result = $this->db->query('SELECT likes FROM review WHERE idgame="'.$id.'"');
+		// $like = $result->row();
+		
+		// $like = $like+1;
+		
+		// $this->db->set('likes','likes+1');
+		// $this->db->where('id',$id);
+		// $this->db->update('review');
 	}
 }
 ?>

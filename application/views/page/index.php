@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Game Box a Games a Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
