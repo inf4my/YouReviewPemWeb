@@ -218,10 +218,10 @@ class youreview extends CI_Controller {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		
+		//echo $namalengkap, " ",$ttl, " ", $alamat, " ", $username, " ", $password;
 
-		//$this->load->model('User');
-		//$this->User->signup($namalengkap,$ttl, $alamat, $username, $password);
+		$this->load->model('User');
+		$this->User->signup($namalengkap, $ttl, $alamat, $username, $password);
 		//redirect(base_url($data->url), 'refresh');
 
 	}

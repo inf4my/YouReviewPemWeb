@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 25, 2017 at 09:30 PM
+-- Generation Time: May 25, 2017 at 09:39 PM
 -- Server version: 5.7.13-log
 -- PHP Version: 7.0.8
 
@@ -130,6 +130,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `salt`, `namalengkap`, `tanggallahir`, `alamat`) VALUES
+('aaa', '8b10e2b37ef299589b78d659a96e0436', '59274ead24bda', 'aaa', '2017-05-26', 'aaa'),
 ('admin', '2c6754131b172df76c2fd80ab2143ec4', '5926e98291def', 'admin', '1996-04-20', 'BMR'),
 ('inf4my', '04f943fb38f7424b8b52c6fa44a8a94b', '592697356fbeb', 'Naufal Irfan', '1996-02-04', 'Tangerang'),
 ('jamalkun', 'bcfbafe0d458da543aba46d1be98ce2a', '5926c3451d8e4', 'Jamal-kun', '1945-04-20', 'Tangerang'),

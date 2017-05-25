@@ -25,6 +25,7 @@ class User extends CI_Model{
 	public function signup($namalengkap, $ttl, $alamat, $username, $password){
 		$salt = uniqid();
 		$passwordFinal = md5($password.$salt);
+		//echo $passwordFinal;
 
 		$data = array(
 			'username' => $username,
@@ -35,7 +36,14 @@ class User extends CI_Model{
 			'alamat' => $alamat
 			);
 		
-		$this->db->insert('user', $data);
+		$rs = $this->db->insert('user', $data);
+
+		if($rs){
+			echo "Berhasil";
+		}
+		else{
+			echo "Gagal";
+		}
 	}
 	
 	public function show_user_activity($user){
