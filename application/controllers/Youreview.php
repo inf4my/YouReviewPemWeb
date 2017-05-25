@@ -92,9 +92,9 @@ class youreview extends CI_Controller {
 	public function add_review($id)
 	{
 		$this->load->model('Review');
-		$goingToBeAdded = $this->Review->init($_POST['name'], $id, $_POST['rating'], $_POST['review']);
+		$goingToBeAdded = $this->Review->init($this->session->uName, $id, $_POST['rating'], $_POST['review']);
 		$this->Review->add_review($goingToBeAdded);
-		$this->Review->add_review($goingToBeAdded);
+		#$this->Review->add_review($goingToBeAdded);
 		#$idGame = $id;
 
 		#$nilai = $_POST['rating'];
@@ -234,26 +234,35 @@ class youreview extends CI_Controller {
 		$this->load->model('Login');
 		$res = $this->Login->signin($username,$password);
 		//echo $res;
-		if($res=="Berhasil"){
+		if(isset($res)){
+			$this->session->set_userdata($res);
 			//$data['stat'] = $_SESSION['STATUS']==1;
-				echo "Selamat Datang, ".$username;
+				echo "Selamat Datang, ".$this->session->uName;
 				// redirect(base_url('/index.php/Youreview/',$data));
+			redirect(base_url(), 'refresh');
 			//$user = $this->session->userdata('loggedin');
 			
 			//return isset($user);
 		}
 		else{
-			//echo "<script> alert('Wrong Username/Password'); </script>"; 
+			//echo "<script> alert('Wrong Username/Password'); </script>";
+			#echo "salah";			
 			redirect(base_url('/index.php/Youreview/login'));
 		}
 	}
 
-	public function addLike($id)
+	public function addLike($id)//id disini itu id untuk reviewnya. Bukan id game
 	{
-		$idGame = $id;
+		#$idGame = $id;
 		$this->load->model('Review');
-		$res = $this->Review->add_like($idGame);
+		$res = $this->Review->add_like($id);
 
-		//redirect(base_url('/index.php/Youreview/details/'.$idGame));
+		redirect(base_url('/index.php/Youreview/details/'.$res), 'refresh');
+	}
+	
+	public function logout(){
+		$userSession = array('uName','namaLengkap');
+		$this->session->unset_userdata($userSession);
+		redirect(base_url(), 'refresh');
 	}
 }

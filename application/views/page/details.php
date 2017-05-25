@@ -18,8 +18,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!-- header -->
-<?php echo $header; ?>
 <!--banner-info-->	
 <?php echo $banner; ?>
 <!-- banner -->
@@ -46,8 +44,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		?>
 		<br><br>
 		
-		<a style="float:left;margin-left: 500px;" href="<?php echo base_url('index.php/Youreview/open_review/'.$res->id);?>" class="btn btn-primary col-xs-offset-10" role="button"><span class="glyphicon glyphicon-plus-sign" style="margin-bottom: 5px" aria-hidden="true"></span> Review</a>
+		<a style="float:left;margin-left: 500px;" 
+		href="<?php echo base_url('index.php/Youreview/open_review/'.$res->id);?>" 
+		class="btn btn-primary col-xs-offset-10" role="button"><span class="glyphicon glyphicon-plus-sign"
+		style="margin-bottom: 5px" aria-hidden="true"></span> Review</a>
 		<h2>Review</h2>
+		
 		<div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -73,8 +75,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         	foreach ($sb->result() as $row) {
          	echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br>";
 			echo "<a href='".base_url('index.php/Youreview/addLike/'.$row->id)."'
-					class='btn btn-primary' role='button'><span class='glyphicon glyphicon-plus-sign' style='margin-bottom: 5px' aria-hidden='true'>
-					</span> Review</a>";
+					class='btn btn-primary' role='button'><span class='glyphicon glyphicon-thumbs-up' style='margin-bottom: 5px' aria-hidden='true'>
+					</span></a>";
 			echo "<br><br>";
          	} 
         ?>

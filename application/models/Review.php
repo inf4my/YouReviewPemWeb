@@ -44,15 +44,17 @@ class Review extends CI_Model{
 	}
 	
 	public function add_like($id){
-		echo $id;
-		// $result = $this->db->query('SELECT likes FROM review WHERE idgame="'.$id.'"');
-		// $like = $result->row();
+		#echo $id;
+		 $result = $this->db->query('SELECT likes, idgame FROM review WHERE id="'.$id.'"');
+		 $row = $result->row();
 		
-		// $like = $like+1;
+		$jmlhLike = $row->likes;
+		echo $jmlhLike;
+		$jmlhLike = $jmlhLike+1;
 		
-		// $this->db->set('likes','likes+1');
-		// $this->db->where('id',$id);
-		// $this->db->update('review');
+		 $this->db->where('id',$id);
+		 $this->db->update('review', array('likes' => $jmlhLike));
+		 return $row->idgame;
 	}
 }
 ?>

@@ -14,8 +14,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						 <li><a href="<?php echo base_url('index.php/youreview/about'); ?>">About</a></li>
 						 <li><a href="<?php echo base_url('index.php/youreview/reviews'); ?>">Reviews</a></li>
 						 <li><a href="<?php echo base_url('index.php/youreview/gallery'); ?>">Gallery</a></li>
-						 <li><a href="<?php echo base_url('index.php/youreview/login'); ?>">Login</a></li>
-						 <li><a href="<?php echo base_url('index.php/youreview/signup'); ?>">Sign Up</a></li>
+						 <?php
+						 #$this->load->library('session');
+						 if($this->session->has_userdata('uName')){
+							 echo" <li><a href='".base_url('index.php/youreview/logout')."'>".$this->session->uName."</a></li>";
+						 }
+						 else{
+							 echo "<li><a href='".base_url('index.php/youreview/login')."'>Login</a></li>";
+							 echo "<li><a href='".base_url('index.php/youreview/signup')."'>Sign Up</a></li>";
+						 }
+						 ?>
 				  </ul>
 			 </div>	
 			 <div class="clearfix"></div>

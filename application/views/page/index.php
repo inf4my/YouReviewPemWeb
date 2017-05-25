@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Game Box a Games a Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
+<title>YouReview</title>
 <?php
 	echo $scripts;
 	echo $style;
@@ -19,7 +19,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <!-- header-->
 <div class="top-banner">
-	<?php echo $header;?>
 	 <?php echo $banner;?>
 </div>
 	 <!-- Slider-starts-Here -->

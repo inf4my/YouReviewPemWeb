@@ -10,10 +10,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	echo $scripts;
 	echo $style;
 	?>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-	<?php echo $header; ?>
-	<?php echo $banner; ?>
+	<div class="top-banner">
+	 <?php echo $banner;?>
+	 <div class="banner">		  			
+		<div class="bnr2">						  
+	   </div>			 
+</div>
+</div>
 	<p style="margin-top:90px;"></p>
 	<?php
 		echo form_open('Youreview/loginProcess/', 'class="form-horizontal"');
@@ -60,4 +67,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 </body>
+<?php echo $footer;?>
 </html>

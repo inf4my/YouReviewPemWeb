@@ -53,23 +53,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			echo form_open('Youreview/add_review/'.$res->id, 'class="form-horizontal"');
 		?>
 
-
-		<div class="form-group">
-		<div class="col-sm-1 control-label">
-		<?php echo form_label('Nama '); ?>
-		</div>
-		<div class="col-sm-4">
-		<?php echo form_input(
-		array(
-			'type' => 'text',
-			'class' => 'form-control',
-			'name' => 'name',
-			'placeholder' => 'Nama'
-		));
-		?>
-		</div>
-		</div>
-
 		<div class="form-group">
 		<div class="col-sm-1 control-label">
 		<?php echo form_label('Rating '); ?>
