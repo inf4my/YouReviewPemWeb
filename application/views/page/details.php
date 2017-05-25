@@ -33,7 +33,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="col-sm-5" style="margin-top:170px">
 		<img style="width:250px;height:400px;" src="<?php echo base_url('upload/' . $res->image);?>">
 		</div>
-		//
 		<div class="col-sm-5" style="margin-top:100px;">
 		<a style='float:left;margin-left: 500px;' 
 		href='<?php echo base_url('index.php/Youreview/reviews');?>' 
@@ -41,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		style='margin-bottom: 5px' aria-hidden='true'></span> Back</a>
 		<br>
 		<h2>Final Result from User Reviews</h2>
-		<?php echo "<h2>".$likert."</h2>";?>
+		<?php echo "<h2>".number_format((float)$likert, 2, ',', '')."/100</h2>";?>
 		
 		
 		<?php

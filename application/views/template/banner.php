@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 <div class="banner-info">
 		  <div class="container"">
 			  <div class="logo">
-					 <h1><a href="<?php echo base_url(''); ?>">GAME BOX</a></h1>
+					 <h1><a href="<?php echo base_url(''); ?>">YouReview</a></h1>
 			  </div>
 			 <div class="top-menu">
 				 <span class="menu"></span>

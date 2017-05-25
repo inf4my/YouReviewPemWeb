@@ -308,7 +308,12 @@ class youreview extends CI_Controller {
 		$sum = $score1+ $score2+ $score3+ $score4+ $score5;
 		$Y = 5* $count;
 		$X = 1* $count;
-		$finalResult =  $sum / $Y * 100;
+		if($Y==0 || $X == 0 ){
+			$finalResult = 0;
+		}
+		else{
+			$finalResult =  $sum / $Y * 100;
+		}
 		#$operan = array(
 	#				'jmlhResponden' => $count,
 	#				'score5' => $score5,

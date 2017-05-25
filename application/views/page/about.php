@@ -37,49 +37,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <img src="<?php echo base_url(); ?>assets/images/abt.jpg" class="img-responsive" alt=""/>
 			 </div>
 			 <div class="col-md-7 abt-info-pic">
-				 <h3>Vestibulum congue neque quis ex fringilla, in pellentesque massa gravida.</h3>
-				 <p>Mauris tempus lorem nec ex facilisis suscipit. Phasellus pretium rutrum augue, eu rutrum
-				 lacus lobortis rutrum. Etiam a sem et velit sollicitudin placerat. Maecenas tincidunt 
-				 justo ligula, sit amet maximus dolor iaculis quis. Sed laoreet cursus posuere. 
-				 Pellentesque commodo odio in luctus interdum.</p>
-				 <ul>
-					 <li>Proin et ligula ut nulla laoreet posuere.</li>
-					 <li>Sed vestibulum magna vel egestas feugiat.</li>
-					 <li>Curabitur nec erat eu lorem gravida aliquet.</li>
-				 </ul>
+				 <h3>A website where a gamer review game based on experience</h3>
+				 <p>Ever hear a word "shill"? It's a word to describe when someone's praising a game because they got paid for good reviews
+				 or because of their fandom. In this website, no matter how much the "shill" the community will always determined the final score.
+				 Let's start review!<br>
+				 Cheerio</p>
 			 </div>
 			 <div class="clearfix"></div>
 		 </div>
-		 <div class="testimonals">
-				<h3>Testimonals</h3>
-				<div class="testimonal-grids">
-					 <div class="col-md-4 testimonal-grid">
-						 <div class="testi-info">
-						 <p>""..Mauris congue, dolor at vehicula scelerisque, enim odio vehicula turpis, vitae luctus dolor nisi eget est. Aliquam maximus felis eget varius mattis. Quisque tristique nibh imperdiet dignissim molestie.""</p>
-						 <h4>Mark Johnson</h4>
-						 <a href="mailto:example@gmail.com">http://www.example.com</a>
-						 </div>
-					 </div>
-					 <div class="col-md-4 testimonal-grid">
-						 <div class="testi-info">
-						 <p>""..Mauris congue, dolor at vehicula scelerisque, enim odio vehicula turpis, vitae luctus dolor nisi eget est. Aliquam maximus felis eget varius mattis. Quisque tristique nibh imperdiet dignissim molestie.""</p>
-						 <h4>Wiiams Deo</h4>
-						 <a href="mailto:example@gmail.com">http://www.example.com</a>
-						 </div>
-					 </div>
-					 <div class="col-md-4 testimonal-grid">
-						 <div class="testi-info">
-						 <p>""..Mauris congue, dolor at vehicula scelerisque, enim odio vehicula turpis, vitae luctus dolor nisi eget est. Aliquam maximus felis eget varius mattis. Quisque tristique nibh imperdiet dignissim molestie.""</p>
-						 <h4>Mark Johnson</h4>
-						 <a href="mailto:example@gmail.com">http://www.example.com</a>
-						 </div>
-					 </div>
-					 <div class="clearfix"></div>
-				</div>
-		   </div>
 		   <div class="team">
 			  <h3>Our Team</h3>	  
-			  <div class="grid_4">
+			  <div class="col-md-12 grid_4">
 				<div class="team-grid">
 						   <img src="<?php echo base_url(); ?>assets/images/a2.jpg" alt="">
 						   <h4>Kevin Lionery</h4>

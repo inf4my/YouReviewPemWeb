@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <div class="slid banner2">	
 						  <div class="caption">
 								<h3>The number 1 website you should visit to get reviews</h3>
-								<p>-Seymour Butts, professional gamer</p>
+								<p>-John Connor, professional gamer</p>
 						  </div>
 					 </div>
 				
