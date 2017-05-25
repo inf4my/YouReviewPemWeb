@@ -5,12 +5,14 @@ class youreview extends CI_Controller {
 
 	public function index()
 	{
-
+		$this->load->model('Game');
+		$new = $this->Game->get_for_index();
 		$data['style']= $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts']= $this->load->view('includes/scripts', NULL, TRUE);
 		$data['banner']= $this->load->view('template/banner', NULL, TRUE);
 		$data['header']= $this->load->view('template/header', NULL, TRUE);
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
+		$data['latest'] = $new;
 		$this->load->view('page/index', $data);
 		
 	}
