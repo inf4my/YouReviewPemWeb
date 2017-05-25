@@ -218,9 +218,11 @@ class youreview extends CI_Controller {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		$this->load->model('User');
-		$this->User->signup($namalengkap,$ttl, $alamat, $username, $password);
-		redirect(base_url($data->url), 'refresh');
+		
+
+		//$this->load->model('User');
+		//$this->User->signup($namalengkap,$ttl, $alamat, $username, $password);
+		//redirect(base_url($data->url), 'refresh');
 
 	}
 
@@ -359,4 +361,47 @@ class youreview extends CI_Controller {
 		#$this->load->view('welcome_message', $data);
 	}
 
+	public function addGame()
+	{
+		$title = $_POST['title'];
+		$config['upload_path']          = './upload/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = '2000'; //2000Kb = 2MB
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('poster'))
+        {
+            echo $this->upload->display_errors();
+        }
+        else
+        {
+			$post = $this->upload->data();
+        }
+
+		$post = $this->upload->data('file_name');
+		//echo $post;
+
+		$genre = $_POST['genre'];
+		$daterelease = $_POST['daterelease'];
+		$pl = $_POST['alson'];
+		$str = '';
+		//$size = count($pl);
+		//echo $size;
+		foreach ($pl as $pltf) {
+			//echo $pltf.", ";
+			// $str .= $pltf;
+			// if($pltf < $size){
+			// 	$str .= ", ";
+			// }
+			$str .= $pltf.', ';
+			
+		}
+		$str = rtrim($str, ',');
+		//echo $str;
+		$description = $_POST['description'];
+		
+		$this->load->model('Game');
+		$this->Game->addnewgame($title, $post, $genre, $daterelease, $str, $description);
+	}
 }

@@ -57,7 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="form-group">
 		<div class="col-sm-1 control-label">
-		<?php echo form_label('Title '); ?>
+		<?php echo form_label('Name '); ?>
 		</div>
 		<div class="col-sm-4">
 		<?php echo form_input(
@@ -79,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    array(
 	      'type' => 'file',
 	      'class' => 'form-control',
-	      'name' => 'image'
+	      'name' => 'poster'
 	    ));
 	    ?>
 	    </div>
@@ -135,7 +135,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<?php
 		foreach ($alson as $key => $value) {
 			$data = array(
-				'name' => 'alson',
+				'name' => 'alson[]',
 				'value' => $value
 				);
 			echo form_checkbox($data)." ".$value."<br>";

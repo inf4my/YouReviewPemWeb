@@ -16,5 +16,41 @@ class Game extends CI_Model{
 		$query = $this->db->query('SELECT title FROM game WHERE id ="'.$idDariReview.'" ');
 		return $query->row();
 	}
+
+	public function addnewgame($title, $post, $genre, $daterelease, $alson, $description)
+	{
+		$result = $this->db->query('SELECT * FROM game');
+		$rows = $result->num_rows();
+		//echo $rows;
+
+		//echo $title;
+		//echo substr($title, 2, 3);
+		$length = strlen($title);
+		$idG = substr(strtoupper($title), $length-2, 3).$rows*rand(1,9);
+		//echo $idG;
+		//echo $alson;
+		$data = array(
+			'id' => $idG,
+			'title' => $title,
+			'image' => $post,
+			'genre' => $genre,
+			'daterelease' => $daterelease,
+			'alson' => $alson,
+			'description' => $description
+			);
+		$rst = $this->db->insert('game', $data);
+
+		if($rst)
+		{
+			//echo "Yeayy berhasil";
+			echo "<script> alert('New game has been added') </script>";
+		}
+		else
+		{
+			//echo "Hmm, coba lagi men";
+			echo "<script> alert('Failed to add game') </script>";
+		}
+		
+	}
 }
 ?>
