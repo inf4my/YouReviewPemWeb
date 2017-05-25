@@ -1,32 +1,45 @@
 <?php
-class Login extends CI_Model{
+class User extends CI_Model{
 	
 	public function signin($uName, $password){
-		$query = $this->db->query('SELECT username,password, salt FROM user WHERE username="'.$uName.'"');
+		$query = $this->db->query('SELECT username,password, salt, namalengkap FROM user WHERE username="'.$uName.'"');
 		$row = $query->row();
 		if(isset($row)){
 			$pass = $password;
 			$pass = $pass.$row->salt;
-			if($pass===$row->password){
+			if(strcmp($pass,$row->password)){
 				$msg = "Berhasil";
+				$userSession = array(
+					'uName' => $row->username,
+					'namaLengkap' => $row->namalengkap
+				);
 			}
 		}
 		else{
 			$msg = "Gagal";
 		}
-		return $msg;
+		return $userSession;
 	}
 	
-	public function blabla($username,$password){
-		$query = $this->db->query('SELECT username,password FROM user WHERE username="'.$username.'" AND password="'.$password.'"');
-		$row = $query->row();
-		if(isset($row)){
-			$msg = "Berhasil";
-		}
-		else{
-			$msg = "Gagal";
-		}
-		return $msg;
+	public function signup($namalengkap, $ttl, $alamat, $username, $password){
+		$salt = uniqid();
+		$passwordFinal = md5($password.$salt);
+
+		$data = array(
+			'username' => $username,
+			'password' => $passwordFinal,
+			'salt' => $salt,
+			'namalengkap' => $namalengkap,
+			'tanggallahir' => $ttl,
+			'alamat' => $alamat
+			);
+		
+		$this->db->insert('user', $data);
+	}
+	
+	public function show_user_activity($user){
+		$user_reviews = $this->db->query('SELECT id, name,reviews,likes, idgame, score FROM review WHERE name="'.$user.'"');
+		return $user_reviews->result();
 	}
 }
 ?>

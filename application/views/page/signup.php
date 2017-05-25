@@ -12,8 +12,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	?>
 </head>
 <body>
-	<?php echo $header; ?>
 	<?php echo $banner; ?>
+	<div class="banner">		  			
+		<div class="bnr2">						  
+	   </div>
 	<p style="margin-top:90px;"></p>
 	<?php
 		echo form_open('Youreview/registerProcess/', 'class="form-horizontal"');
@@ -105,5 +107,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 
+	<?php
+	echo $footer;
+	?>
 </body>
 </html>

@@ -59,6 +59,7 @@ class youreview extends CI_Controller {
 		$gameInfo = $this->Review->get_game($id);
 		
 		$reviews = $this->Review->get_detail_review($id);
+		$individuReview = $this->Review->get_individual_review($id, $this->session->uName);
 
 		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
 		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
@@ -67,6 +68,7 @@ class youreview extends CI_Controller {
 		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
 		$data['res'] = $gameInfo;
 		$data['sb'] = $reviews;
+		$data['individu'] = $individuReview;
 
 
 		$this->load->view('page/details',$data);
@@ -212,8 +214,9 @@ class youreview extends CI_Controller {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		$this->load->model('Register');
-		$this->Register->signup($namalengkap,$ttl, $alamat, $username, $password);
+		$this->load->model('User');
+		$this->User->signup($namalengkap,$ttl, $alamat, $username, $password);
+		redirect(base_url($data->url), 'refresh');
 
 	}
 
@@ -231,15 +234,15 @@ class youreview extends CI_Controller {
 	public function loginProcess(){
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$this->load->model('Login');
-		$res = $this->Login->signin($username,$password);
+		$this->load->model('User');
+		$res = $this->User->signin($username,$password);
 		//echo $res;
 		if(isset($res)){
 			$this->session->set_userdata($res);
 			//$data['stat'] = $_SESSION['STATUS']==1;
 				echo "Selamat Datang, ".$this->session->uName;
 				// redirect(base_url('/index.php/Youreview/',$data));
-			redirect(base_url(), 'refresh');
+			redirect(base_url($data->url), 'refresh');
 			//$user = $this->session->userdata('loggedin');
 			
 			//return isset($user);
@@ -264,5 +267,19 @@ class youreview extends CI_Controller {
 		$userSession = array('uName','namaLengkap');
 		$this->session->unset_userdata($userSession);
 		redirect(base_url(), 'refresh');
+	}
+	
+	public function profile($userName){
+		$this->load->model('User');
+		$result = $this->User->show_user_activity($userName);
+		
+		$data['style'] = $this->load->view('includes/style', NULL, TRUE);
+		$data['scripts'] = $this->load->view('includes/scripts', NULL, TRUE);
+		$data['header'] = $this->load->view('template/header', NULL, TRUE);
+		$data['banner'] = $this->load->view('template/banner', NULL, TRUE);
+		$data['footer'] = $this->load->view('template/footer', NULL, TRUE);
+		$data['userActivity'] = $result;
+
+		$this->load->view('page/userPage',$data);
 	}
 }

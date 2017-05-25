@@ -34,6 +34,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<img style="width:250px;height:400px;" src="<?php echo base_url('upload/' . $res->image);?>">
 		</div>
 
+		<a style='float:left;margin-left: 500px;' 
+		href='<?php echo base_url('index.php/Youreview/reviews');?>' 
+		class='btn btn-primary col-xs-offset-10' role='button'><span class='glyphicon glyphicon glyphicon-step-backward'
+		style='margin-bottom: 5px' aria-hidden='true'></span> Back</a>
+		
 		<div class="col-sm-5" style="margin-top:100px;">
 		<?php
 			echo "<h2>".$res->title."<h3 class='text-muted'>Game Details</h3></h2>";
@@ -44,11 +49,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		?>
 		<br><br>
 		
-		<a style="float:left;margin-left: 500px;" 
-		href="<?php echo base_url('index.php/Youreview/open_review/'.$res->id);?>" 
-		class="btn btn-primary col-xs-offset-10" role="button"><span class="glyphicon glyphicon-plus-sign"
-		style="margin-bottom: 5px" aria-hidden="true"></span> Review</a>
-		<h2>Review</h2>
+		<?php 
+			if($this->session->has_userdata('uName')){
+				echo "<a style='float:left;margin-left: 500px;' 
+					href='".base_url('index.php/Youreview/open_review/'.$res->id)."' 
+					class='btn btn-primary col-xs-offset-10' role='button'><span class='glyphicon glyphicon-plus-sign'
+					style='margin-bottom: 5px' aria-hidden='true'></span> Review</a>
+					<h2>Review</h2>";
+			}
+			else{
+				echo "<a style='float:left;margin-left: 500px;' 
+					href='".base_url('index.php/youreview/reviews')."' 
+					class='btn btn-danger col-xs-offset-10' role='button'><span class='glyphicon glyphicon-plus-sign'
+					style='margin-bottom: 5px' aria-hidden='true'></span> You must login to give your review</a>
+					<h2>Review</h2>";
+			}
+		?>
+		<!--<a style='float:left;margin-left: 500px;' 
+		href='<?php echo base_url('index.php/Youreview/open_review/'.$res->id);?>' 
+		class='btn btn-primary col-xs-offset-10' role='button'><span class='glyphicon glyphicon-plus-sign'
+		style='margin-bottom: 5px' aria-hidden='true'></span> Review</a>
+		<h2>Review</h2>-->
 		
 		<div class="panel-group" id="accordion">
     <div class="panel panel-default">
@@ -59,7 +80,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
-        <p>Belom ada isinya coy</p>
+        <?php
+			if(isset($_SESSION['uName'])){
+				if($individu->result()== NULL){
+					echo"<p>User hasn't review this game</p>";
+				}
+				else{
+					foreach ($individu->result() as $row) {
+					echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br>";
+					echo "<br><br>";
+					} 
+				}
+				
+			}
+			else{
+				echo"<p>User not signed in</p>";
+			}
+        ?>
         </div>
       </div>
     </div>

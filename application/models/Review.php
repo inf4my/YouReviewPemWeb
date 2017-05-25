@@ -35,8 +35,13 @@ class Review extends CI_Model{
 	}
 	
 	public function get_detail_review($idGame){
-		$detail_review = $this->db->query('SELECT id, name,reviews,likes FROM review WHERE idgame="'.$idGame.'"');
+		$detail_review = $this->db->query('SELECT id, name,reviews,likes FROM review WHERE idgame="'.$idGame.'" LIMIT 5');
 		return $detail_review;
+	}
+	
+	public function get_individual_review($idGame, $userName){
+		$individual_review = $this->db->query('SELECT id, name,reviews,likes FROM review WHERE idgame="'.$idGame.'"AND name="'.$userName.'"');
+		return $individual_review;
 	}
 	
 	public function add_review($toBeAdded){

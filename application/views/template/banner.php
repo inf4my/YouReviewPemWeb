@@ -17,7 +17,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						 <?php
 						 #$this->load->library('session');
 						 if($this->session->has_userdata('uName')){
-							 echo" <li><a href='".base_url('index.php/youreview/logout')."'>".$this->session->uName."</a></li>";
+							 echo" <li><a href='".base_url('index.php/youreview/profile/'.$this->session->uName)."'>".$this->session->uName."</a></li>";
+							 echo" <li><a href='".base_url('index.php/youreview/logout')."'>Logout</a></li>";
 						 }
 						 else{
 							 echo "<li><a href='".base_url('index.php/youreview/login')."'>Login</a></li>";
