@@ -49,14 +49,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  <h3>Our Team</h3>	  
 			  <div class="col-md-12 grid_4">
 				<div class="team-grid">
-						   <img src="<?php echo base_url(); ?>assets/images/a2.jpg" alt="">
+						   <img src="<?php echo base_url(); ?>assets/images/kevin.jpg" alt="">
 						   <h4>Kevin Lionery</h4>
 						  <p>Computer science student focusing on applied computer networking</p>
 					  </div>
 			  </div>
 			  <div class="grid_4">
 				 <div class="team-grid">
-						   <img src="<?php echo base_url(); ?>assets/images/a1.jpg" alt="">
+						   <img src="<?php echo base_url(); ?>assets/images/naufal.jpg" alt="">
 						   <h4>Naufal irfan</h4>
 						  <p>Computer science student focusing on enterprise application system</p>
 					  </div>
