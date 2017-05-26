@@ -58,6 +58,7 @@ class youreview extends CI_Controller {
 	{
 		$this->load->model('Review');
 		
+		$likesTerbanyak = $this->Review->get_most_likes($id);
 		$gameInfo = $this->Review->get_game($id);
 		$likert = $this->get_likert_value($id);
 		
@@ -73,6 +74,7 @@ class youreview extends CI_Controller {
 		$data['sb'] = $reviews;
 		$data['individu'] = $individuReview;
 		$data['likert'] = $likert;
+		$data['mostLikes'] = $likesTerbanyak;
 
 
 		$this->load->view('page/details',$data);

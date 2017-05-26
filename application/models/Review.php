@@ -79,5 +79,13 @@ class Review extends CI_Model{
 		$this->db->where('id',$id);
 		$this->db->update('game',$data);
 	}
+
+	public function get_most_likes($idGame){
+		$this->db->where('idgame', $idGame);
+		$this->db->order_by('likes', 'DESC');
+		$query = $this->db->get('review', 1);
+		$balikin = $query->row();
+		return $balikin;
+	}
 }
 ?>

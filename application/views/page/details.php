@@ -45,24 +45,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<?php
 			echo "<h2>".$res->title."<h3 class='text-muted'>Game Details</h3></h2>";
-			echo "Genre : ".$res->genre."<br>";
-			echo "Released : ".$res->daterelease."<br>";
-			echo "Also on : ".$res->alson."<br>";
-			echo "Description : ".$res->description;
+			echo "<p>Genre : ".$res->genre."</p>";
+			echo "<p>Released : ".$res->daterelease."</p>";
+			echo "<p>Also on : ".$res->alson."</p>";
+			echo "<p>Description : ".$res->description."</p>";
+			#echo "Genre : ".$res->genre."<br>";
+			#echo "Released : ".$res->daterelease."<br>";
+			#echo "Also on : ".$res->alson."<br>";
+			#echo "Description : ".$res->description;
 		?>
 		<br><br>
-		
 		<?php 
 			if($this->session->has_userdata('uName')){
-				echo "<a style='float:left;margin-left: 500px;' 
+				echo "<a style='float:left;' 
 					href='".base_url('index.php/Youreview/open_review/'.$res->id)."' 
 					class='btn btn-primary col-xs-offset-10' role='button'><span class='glyphicon glyphicon-plus-sign'
 					style='margin-bottom: 5px' aria-hidden='true'></span> Review</a>
 					<h2>Review</h2>";
 			}
 			else{
-				echo "<a style='float:left;margin-left: 500px;' 
-					href='".base_url('index.php/youreview/reviews')."' 
+				echo "<a style='float:left;' 
+					href='#' 
 					class='btn btn-danger col-xs-offset-10' role='button'><span class='glyphicon glyphicon-plus-sign'
 					style='margin-bottom: 5px' aria-hidden='true'></span> You must login to give your review</a>
 					<h2>Review</h2>";
@@ -90,8 +93,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				}
 				else{
 					foreach ($individu->result() as $row) {
-					echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br>";
-					echo "<br><br>";
+					echo "<h4>".$row->name.":</h4><p>".$row->reviews."</p>
+         			<p>Like : ".$row->likes."</p>";
 					} 
 				}
 				
@@ -106,14 +109,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Punya user lain</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Most Likes</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
 		<?php
+		#$row = $mostLikes->result();
+		#var_dump($mostLikes->result());
+		if(isset($mostLikes)){
+			echo "<h4>".$mostLikes->name.":</h4><p>".$mostLikes->reviews."</p>
+         			<p>Like : ".$mostLikes->likes."</p>";
+		}
+		else{
+			echo "<p>No likes yet</p>";
+		}
+		 ?>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Other user's reviews</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+		<?php
         	foreach ($sb->result() as $row) {
-         	echo $row->name." : <br>".$row->reviews."<br>Like : ".$row->likes."<br>";
+         	echo "<h4>".$row->name.":</h4><p>".$row->reviews."</p>
+         	<p>Like : ".$row->likes."</p>";
 			echo "<a href='".base_url('index.php/Youreview/addLike/'.$row->id)."'
 					class='btn btn-primary' role='button'><span class='glyphicon glyphicon-thumbs-up' style='margin-bottom: 5px' aria-hidden='true'>
 					</span></a>";
