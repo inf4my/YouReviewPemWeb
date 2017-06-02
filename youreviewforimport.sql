@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 25, 2017 at 07:31 AM
+-- Generation Time: Jun 02, 2017 at 12:06 PM
 -- Server version: 5.7.13-log
 -- PHP Version: 7.0.8
 
@@ -41,11 +41,25 @@ CREATE TABLE `game` (
 --
 
 INSERT INTO `game` (`id`, `title`, `image`, `genre`, `daterelease`, `alson`, `description`) VALUES
+(' 240', 'Test Fallout again 2', 'Fallout4_Render_SynthGen2.jpg', 'Combat', '2017-05-26', 'PS4, PSP, PC, 3DS, ', 'Coba add game lg'),
+(' 4112', 'Persona 4', 'Persona_44.png', 'Adventure', '2017-05-26', 'PS4, PC, Xbox One, ', 'Ini game di add (again)'),
+(' 414', 'Persona 4', 'Persona_42.png', 'Adventure', '2017-05-26', 'PS4, PC, Xbox One, ', 'Ini game di add (again)'),
+(' 445', 'Persona 4', 'Persona_43.png', 'Adventure', '2017-05-26', 'PS4, PC, Xbox One, ', 'Ini game di add (again)'),
+(' 491', 'Persona 4', 'Persona_41.png', 'Adventure', '2017-05-26', 'PS4, PC, Xbox One, ', 'Ini game di add (again)'),
+(' 496', 'Persona 4', 'Persona_4.png', 'Adventure', '2017-05-26', 'PS4, PC, Xbox One, ', 'Ini game di add (again)'),
+(' 588', 'Persona 5', 'persona5-1280-3-1490728399817_400w.jpg', 'Adventure', '2017-05-26', 'PS4, PC, Xbox One, Xbox 360, Nintendo Switch, ', 'Ini game di add'),
 ('AVE2', 'For Honor', 'forhonor_knight_mobile.jpg', 'Action', '2017-05-18', 'PS4, Xbox One', 'Game perang-perangan pake senjata'),
-('AVE5', 'Fallout: New Vegas', '1462729837971.png', 'Action', '2017-05-18', 'PS3, Xbox 360', 'Game RPG, bisa jadi koboi'),
+('AVE5', 'Fallout: New Vegas', '1462729837971.png', 'Action', '2008-10-19', 'PS3, Xbox 360, PC', 'Game RPG, bisa jadi koboi'),
 ('AVE6', 'LA Noire', 'l_a__noire_by_filthymonkey-d3jehc7.jpg', 'Action', '2017-05-18', 'PS3, PC', 'Game jadi detektif'),
+('GI102', 'Persona 4 lagi', 'Persona_45.png', 'Action', '2017-05-26', 'PS4, PSP, PC, 3DS, ', 'ddddd'),
+('GI144', 'Persona 4 lagi', 'Persona_46.png', 'Action', '2017-05-26', 'PS4, PSP, PC, 3DS, ', 'ddddd'),
+('GI171', 'Persona 4 lagi lagi', 'Persona_47.png', 'Action', '2017-05-26', 'PS4, PSP, PC, 3DS, ', 'eeee'),
+('gi64', 'Test Fallout lagi', 'Fallout_3_cover_art1.png', 'Action', '2017-05-26', 'PS4, PSP, PC, 3DS, DS, ', 'Coba add game'),
+('IN21', 'Test Fallout again', 'Fo4_Mechanist.png', 'Combat', '2017-05-26', 'PS4, PSP, PC, 3DS, DS, ', 'Coba add game'),
+('IN45', 'Test Fallout again', 'Fo4_Mechanist2.png', 'Combat', '2017-05-26', 'PS4, PSP, PC, 3DS, DS, ', 'Coba add game'),
+('IN56', 'Test Fallout again', 'Fo4_Mechanist1.png', 'Combat', '2017-05-26', 'PS4, PSP, PC, 3DS, DS, ', 'Coba add game'),
 ('TRA1', 'Metal Gear Solid V: The Phantom Pain', 'Untitled-11.jpg', 'Action', '2017-05-18', 'PC, PS3, PS4, Xbox 360, Xbox one', 'Tembak-tembakan'),
-('TRA3', 'Transformers', 'transformers.jpg', 'Sci-Fi', '2017-05-18', 'XBOX', 'Robot'),
+('TRA3', 'Persona 5', 'p5.jpg', 'JRPG', '2017-04-04', 'PS4, PS3', 'Simulasi anak sekolahan'),
 ('TRA4', 'Transformers', 'transformers.jpg', 'Sci-Fi', '2017-05-18', 'XBOX', 'Robot');
 
 -- --------------------------------------------------------
@@ -90,7 +104,11 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`id`, `name`, `idgame`, `score`, `reviews`, `likes`) VALUES
-(1, 'kevinlionery', 'AVE2', 3, 'Lumayanlah', 0);
+(1, 'kevinlionery', 'AVE2', 3, 'Lumayanlah', 3),
+(2, 'inf4my', 'AVE2', 5, 'Mantab', 4),
+(8, 'inf4my', 'AVE5', 4, 'Bagus lah', 1),
+(9, 'inf4my', 'TRA1', 5, 'Seru banget', 1),
+(10, 'jamalkun', 'AVE2', 3, 'Lumayan lah', 0);
 
 -- --------------------------------------------------------
 
@@ -112,7 +130,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `salt`, `namalengkap`, `tanggallahir`, `alamat`) VALUES
-('kevinlionery', '123', '123', 'Kevin Lionery', '1995-12-02', 'Taman Ubud Indah');
+('aaa', '8b10e2b37ef299589b78d659a96e0436', '59274ead24bda', 'aaa', '2017-05-26', 'aaa'),
+('admin', '2c6754131b172df76c2fd80ab2143ec4', '5926e98291def', 'admin', '1996-04-20', 'BMR'),
+('inf4my', '04f943fb38f7424b8b52c6fa44a8a94b', '592697356fbeb', 'Naufal Irfan', '1996-02-04', 'Tangerang'),
+('jamalkun', 'bcfbafe0d458da543aba46d1be98ce2a', '5926c3451d8e4', 'Jamal-kun', '1945-04-20', 'Tangerang'),
+('kevinlionery', '04f943fb38f7424b8b52c6fa44a8a94b', '592697356fbeb', 'Kevin Lionery', '1995-12-02', 'Taman Ubud Indah');
 
 --
 -- Indexes for dumped tables
@@ -153,7 +175,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Constraints for dumped tables
 --
